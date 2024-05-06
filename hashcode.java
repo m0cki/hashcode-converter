@@ -52,16 +52,47 @@ public class hashcode {
 		}
 		System.out.println(hashcode);
 		
+		//Abfrage, ob erneute Hashcode-berechnung durchgeführt werden soll
 		System.out.println("Noch ein Hashcode berechnen? (ja/nein)");
 		Scanner abfrage = new Scanner(System.in);
 		String wiederholung = abfrage.next();
 		
-		if(wiederholung.equals("nein")) {
-			run = false;
-			}
+		abfrageCheck(wiederholung);
+		/*switch(wiederholung) {
+		case "ja":
+			run = true;
+		case "nein":
+			run = false;			
+		}
+		*/
 		}
 	}
 //Methoden
+	//checkt
+	private static boolean abfrageCheck(String wiederholung) {
+		boolean loop = true;
+		int w;
+		if(wiederholung == "ja") {
+			w = 0;
+		} 
+		else {
+			if(wiederholung == "nein") {
+				w = 1;
+			}
+			else {
+				w = 2;
+			}
+		}
+		while(loop) {
+			switch(w) {
+				case 0: 
+					return true;
+				case 1:
+					return false;
+				case 2: 	
+			}
+		}
+	}
 	//Umwandlung Zeichenkette in Dezimal-Zeichenkette
 	private static int[] deziArray(char[] zeichenkette) {
 		int[] dezimal = new int[zeichenkette.length];
